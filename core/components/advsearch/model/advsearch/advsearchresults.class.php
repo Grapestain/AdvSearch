@@ -360,7 +360,7 @@ class AdvSearchResults extends AdvSearch {
                 }
 
                 $extracts = $this->_getExtracts(
-                    $text, $this->nbExtracts, $this->config['extractLength'], $this->searchTerms, $this->config['extractTpl'], $ellipsis = '...'
+                    $text, $this->nbExtracts, $this->config['extractLength'], $this->searchTerms, $this->config['extractTpl'], $this->config['extractEllipsis']
                 );
             } else {
                 $extracts = '';
