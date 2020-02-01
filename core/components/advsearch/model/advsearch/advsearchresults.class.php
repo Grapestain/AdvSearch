@@ -854,8 +854,9 @@ class AdvSearchResults extends AdvSearch {
             }
             for ($i = 1; $i < $nbext; $i++) {
                 if ($extracts[$i]['left'] < $extracts[$i - 1]['wordRight']) {
-                    $extracts[$i - 1]['right'] = $extracts[$i - 1]['wordRight'];
-                    $extracts[$i]['left'] = $extracts[$i - 1]['right'] + 1;
+                    $split_point = floor( ($extracts[$i - 1]['wordRight'] + $extracts[$i]['wordLeft']) / 2 );
+                    $extracts[$i - 1]['right'] = $split_point;
+                    $extracts[$i]['left'] = $split_point + 1;
                     $extracts[$i - 1]['etcRight'] = $extracts[$i]['etcLeft'] = '';
                 } else if ($extracts[$i]['left'] < $extracts[$i - 1]['right']) {
                     $extracts[$i - 1]['right'] = $extracts[$i]['left'];
