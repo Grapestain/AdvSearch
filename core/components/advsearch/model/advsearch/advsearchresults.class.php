@@ -803,7 +803,7 @@ class AdvSearchResults extends AdvSearch {
                 $term = $matches[0][$i][0]; // term found even with wildcard
                 $wordLength = mb_strlen($term);
                 $wordLength2 = $wordLength / 2;
-                $wordLeft = mb_strlen(mb_substr($text, 0, $matches[0][$i][1]));
+                $wordLeft = mb_strlen(substr($text, 0, $matches[0][$i][1]));
                 $wordRight = $wordLeft + $wordLength - 1;
                 $left = (int) ($wordLeft - $extractLength2 + $wordLength2);
                 $right = $left + $extractLength - 1;
